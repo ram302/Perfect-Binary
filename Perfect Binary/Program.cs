@@ -7,7 +7,7 @@ namespace Perfect_Binary
     {
         static void Main(string[] args)
         {
-            string StringToCheck = "00111101011001";
+            string StringToCheck = "1111a1011001";
             
             Console.WriteLine("Binary string " + StringToCheck + " status check: " + IsGoodBinaryString(StringToCheck));
             Console.ReadKey();
@@ -48,7 +48,7 @@ namespace Perfect_Binary
                     }
                     else
                     {
-                        throw new System.FormatException("Invalid character found in incoming string. Found " + ch + " in string. Expecting only 0s and 1s.");
+                        throw new System.FormatException("Invalid character found in incoming string. Found '" + ch + "' in string. Expecting only 0s and 1s.");
                     }
 
                     /*
@@ -62,9 +62,9 @@ namespace Perfect_Binary
                     }
                 }
             }
-            catch (System.FormatException)
+            catch (System.FormatException e)
             {
-                Console.WriteLine("Format exception found in input string!");
+                Console.WriteLine("Format exception found in input string: " + e.Message);
             }
 
             // Both conditions should be true to determine a good binary string:
